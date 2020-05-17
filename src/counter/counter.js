@@ -7,14 +7,26 @@ export default class Counter extends React.Component{
         this.state={
             count:0
         }
+        this.increaseCount = this.increaseCount.bind(this);
+        this.decreaseCount = this.decreaseCount.bind(this);
+    }
+    increaseCount(){
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+    decreaseCount(){
+        this.setState({
+            count: this.state.count - 1
+        })
     }
     render(){
         return(
             <div className="counter">
                 <div>
-                    <button>+</button>
+                    <button onClick={this.increaseCount}>+</button>
                         <span className="count">{this.state.count}</span>
-                    <button>-</button>
+                    <button onClick={this.decreaseCount}>-</button>
                 </div>
             </div>
         )
