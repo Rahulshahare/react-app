@@ -10,7 +10,13 @@ export default class Counter extends React.Component{
     }
     render(){
         return(
-            <h1>Counter</h1>
+            <div className="counter">
+                <div>
+                    <button>+</button>
+                        <span className="count">{this.state.count}</span>
+                    <button>-</button>
+                </div>
+            </div>
         )
     }
 }
