@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './counter/counter'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <p>
           React Counter App
         </p>
+        <Counter/>
         <a
           className="App-link"
           href="https://reactjs.org"
