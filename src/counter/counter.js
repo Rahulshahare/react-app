@@ -24,9 +24,9 @@ export default class Counter extends React.Component{
         return(
             <div className="counter">
                 <div>
-                    <button onClick={this.increaseCount}>+</button>
+                    <button className="button" onClick={this.increaseCount}>+</button>
                         <span className="count">{this.state.count}</span>
-                    <button onClick={this.decreaseCount}>-</button>
+                    <button className="button" onClick={this.decreaseCount}>-</button>
                 </div>
             </div>
         )
