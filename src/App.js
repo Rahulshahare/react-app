@@ -2,17 +2,11 @@ import React from 'react';
 import  'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Routers from './component/router/router';
-import Navbar from './component/common/navbar';
 
 function App() {
   return (
-    <div className="container-fluid">
-        <Navbar/>
-      <div className="row">
-        <div className="col-12">
-          <Routers/>
-        </div>
-      </div>
+    <div>
+      <Routers/>
     </div>
   );
 }
