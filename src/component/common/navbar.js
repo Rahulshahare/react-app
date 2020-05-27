@@ -1,14 +1,13 @@
 import React from 'react';
-import logo from '../../logo.svg';
+import { NavLink , } from 'react-router-dom';
 
 function Navbar(){
     return(
         <nav class="nav">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/about">about</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </nav>
+            <NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink>
+            <NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink>
+            <NavLink to="/something" className="nav-link" activeClassName="active">404</NavLink>
+        </nav>
     )
 }
 
