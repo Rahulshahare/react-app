@@ -1,5 +1,5 @@
-import React from 'react';
-import CreateCoursePage from './createCourse';
+import React, { Suspense } from 'react';
+const CreateCoursePage = React.lazy(()=>import('./createCourse'));
 
 function CoursePage (){
     return(
@@ -10,7 +10,9 @@ function CoursePage (){
                 <p class="lead">We can Create list of Courses here</p>
             </div>
         </div>
-        <CreateCoursePage/>
+        <Suspense fallback={<div>Loading...</div>}>
+            <CreateCoursePage/>
+        </Suspense>
         </div>
     )
 }
