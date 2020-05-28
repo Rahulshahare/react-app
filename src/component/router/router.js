@@ -16,7 +16,7 @@ export default class Routers extends React.Component{
                                 <Switch>
                                     <Route exact={true} path="/" component={HomePage}></Route>
                                     <Route path="/about" component={AboutPage}></Route>
-                                    <Route path="/courses" component={CoursePage}></Route>
+                                    <Route path="/courses" render={() => <CoursePage/>}></Route>
                                     <Route path="*" component={Page404}></Route>
                                 </Switch>
                         </div>
