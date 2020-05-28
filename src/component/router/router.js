@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
 import HomePage from '../home/home';
 import AboutPage from '../about/about';
 import CoursePage from '../courses/courses';
-import Page404 from '../404';
+import Page404 from '../notFound/404';
 import Navbar from '../common/navbar';
 export default class Routers extends React.Component{
     render(){
