@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
 import HomePage from '../home/home';
 import AboutPage from '../about/about';
+import CoursePage from '../courses/courses';
 import Page404 from '../404';
 import Navbar from '../common/navbar';
 export default class Routers extends React.Component{
@@ -15,6 +16,7 @@ export default class Routers extends React.Component{
                                 <Switch>
                                     <Route exact={true} path="/" component={HomePage}></Route>
                                     <Route path="/about" component={AboutPage}></Route>
+                                    <Route path="/courses" component={CoursePage}></Route>
                                     <Route path="*" component={Page404}></Route>
                                 </Switch>
                         </div>
