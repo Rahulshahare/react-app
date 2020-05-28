@@ -8,30 +8,32 @@ class CreateCoursePage extends React.Component{
             courseList:[]
         }
     }
-    handleChange = (event) =>{
+    handleChange = (e) =>{
         this.setState({
-            courseName:event.target.value
+            courseName:e.target.value
         })
     }
-    handleSubmit = () =>{
-        event.preventDefault()
-        const a = this.state.courseList;
-        a = a.push(this.state.courseName);
-
+    handleSubmit = (e) =>{
+        e.preventDefault()
+        var a = this.state.courseName;
+        if(a.length === 0){
+            return;
+        }
         this.setState({
-            courseList:a
+            courseList:this.state.courseList.concat(a),
+            courseName:''
         })
-    }3
+    }
     render(){
         return(
             <div>
-                <h1>Add New Course Here</h1>
+                <h4>Add New Course Here</h4>
                 <form onSubmit={this.handleSubmit}>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="course">Course</label>
-                        <input type="text" onChange={this.handleChange} class="form-control" id="course"/>
+                        <input type="text" onChange={this.handleChange} value={this.state.courseName} className="form-control" id="course"/>
                     </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
         )
