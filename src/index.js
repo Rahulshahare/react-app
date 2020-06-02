@@ -5,4 +5,5 @@ function sayHello() {
 function greet(fnMessage) {
     console.log(fnMessage());
 }
-//greet function getting function as paremater and calling it here
+
+greet(sayHello)
