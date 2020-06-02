@@ -4,3 +4,4 @@ function sayHello() {
 
 let fn = sayHello;
 fn()
+sayHello()
