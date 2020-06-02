@@ -22,3 +22,7 @@ let input = "    Javascript   ";
   const result = wrapInDiv(toLowerCase(trimStr(input)));
                     //its Functional Composition, toLowerCase takes the result of trimStr and convert it to lowercase
                     //Anather level of Function Composition
+                    /** Here we are reading above is like right to left,
+                     * first trimStr then convert the result to lowercase
+                     * and then wrap it into div.
+                     */
