@@ -4,9 +4,7 @@ function sayHello() {
 
 function greet(fnMessage) {
     return function(){
-
+        return "HelloWorld";
     }
 }
 
-// Here instead of returning string, we are returning function, 
-// an annonomous function
