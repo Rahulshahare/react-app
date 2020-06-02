@@ -1,5 +1,13 @@
 import React from 'react';
 
+/**
+ * course list is only available for this component only. if this component re-render 
+ * course list will be empty and initialize again.
+ * so te course list wi not be available through the app.
+ * To use course list data in whole app the redux is require.
+ * Using Redux it is possible to make courseList available for whole app.
+ * So lets get started with Redux
+ */
 export default class CreateCoursePage extends React.Component{
     constructor(props){
         super(props);
