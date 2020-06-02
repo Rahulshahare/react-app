@@ -21,3 +21,5 @@ let input = "    Javascript   ";
   }
 
   const wrapInDiv = str =>"<div>"+ str +"</div>"; //MoreAdane
+
+  const wrapInDiv = str => `<div>${str}</div>`; //its Templating
