@@ -30,7 +30,11 @@ let input = "    Javascript   ";
   console.log(transformx(input));
 
    /**
-    * 
+    * the current output is 
+    * <javascript>undefined</javascript>
+    * it is because, the inut string first get trim then pass to next function
+    * called toLowerCase and then pass to next dynamic functio wrap. as wrap require two arguments
+    * type and input string.
     */
 
  
