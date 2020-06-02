@@ -14,5 +14,6 @@ let message = fn(); //Assignning Returning Annonomous function to Variable
 console.log(message);
 
 /**
- * Here 
+ * Here sayHello and greet are Higher Order Functions,
+ * which can take funtion as a Argument or return a function
  */
