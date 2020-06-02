@@ -19,6 +19,8 @@ let input = "    Javascript   ";
 
   const wrapInDiv = str => `<div>${str}</div>`; //its Templating
 
+  const wrapInSpan = str =>`<span>${str}</span>`;
+
   //these are reusable function
 
   const result = wrapInDiv(toLowerCase(trimStr(input)));
