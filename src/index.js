@@ -16,3 +16,9 @@ console.log(message);
 let numbers = [1,2,3];
 numbers.map(number => number * 2) 
 //Here map is Higher order funtion, so we take each number and multiplied by 2
+
+
+setTimeout(() => console.log("HelloWorld"),1000)
+
+// here setTimeout is Higher order function
+// which return HelloWorld after 1 second
