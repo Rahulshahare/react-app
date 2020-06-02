@@ -26,7 +26,7 @@ let input = "    Javascript   ";
 
 
 
-  const transformx = pipe(trimStr, toLowerCase, wrap);
+  const transformx = pipe(trimStr, toLowerCase, wrap("div"));
   console.log(transformx(input));
 
    /**
@@ -35,6 +35,9 @@ let input = "    Javascript   ";
     * it is because, the inut string first get trim then pass to next function
     * called toLowerCase and then pass to next dynamic functio wrap. as wrap require two arguments
     * type and input string.
+    * 
+    * Now the output is error, it requires a function as argument, we cant pass a string as argument 
+    * to our function
     */
 
  
