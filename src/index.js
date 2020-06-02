@@ -39,8 +39,8 @@ let input = "    Javascript   ";
    * lodash compose will be usefull if we have more funtions to procced
    */
 
-  const transform = pipe(trimStr, toLowerCase, wrapInDiv);
-  console.log(transform(input));
+  const transformx = pipe(trimStr, toLowerCase, wrapInDiv);
+  console.log(transformx(input));
 
    /**
     * Now with pipe lodash function its easy for us to read functions.
