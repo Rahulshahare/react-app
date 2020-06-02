@@ -21,6 +21,15 @@ let input = "    Javascript   ";
 
   //these are two reusable function
 
+  const transform =  compose(wrapInDiv, toLowerCase, trimStr);
+  console.log(transform(input));
+  /**
+   * lodash compose also read from right to left
+   * first trimStr then it gonna pass it from toLowerCase then 
+   * wrap it in div.
+   * lodash compose will be usefull if we have more funtions to procced
+   */
+
   const result = wrapInDiv(toLowerCase(trimStr(input)));
                     //its Functional Composition, toLowerCase takes the result of trimStr and convert it to lowercase
                     //Anather level of Function Composition
