@@ -19,7 +19,7 @@ let input = "    Javascript   ";
 
 //   const wrapInDiv = str => `<div>${str}</div>`; //its Templating
 
-  const wrap = (type, str) =>`<${type}>${str}</${type}>`;
+  const wrap = type => str =>`<${type}>${str}</${type}>`;
             //Here we can wrap input in div or span or any other element. its a Dynamic Wrap
 
   //these are reusable function
