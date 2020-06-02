@@ -17,7 +17,7 @@
  //what is most imortant is here is the function have single parameter
  //Lets make it arrow functon
 
- const add2 = a =>b => a + b;
+ const add2 = a =>b => a + b; // (a) (b) => a + b; Instead of separating comma, we are currying a function
 
 //  add2 is similar to add
 
