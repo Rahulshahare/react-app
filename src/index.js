@@ -7,3 +7,8 @@ function greet(fnMessage) {
 }
 
 greet(sayHello)
+
+/**
+ * here we can assign function to Variable or
+ * pass it to a function 
+ */
