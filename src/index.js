@@ -12,11 +12,13 @@ let input = "    Javascript   ";
   */
 
   const trimStr = str => str.trim(); //MoreAdance
+  
+  const toLowerCase = str => str.toLowerCase();
 
   const wrapInDiv = str => `<div>${str}</div>`; //its Templating
 
   //these are two reusable function
 
-  const result = wrapInDiv(trimStr(input));
-                    //its Functional Composition
-                    
+  const result = wrapInDiv(toLowerCase(trimStr(input)));
+                    //its Functional Composition, toLowerCase takes the result of trimStr and convert it to lowercase
+                    //Anather level of Function Composition
