@@ -8,4 +8,4 @@ function greet(fnMessage) {
     }
 }
 
-sayHello() // will return funcion Back
+let fn = sayHello(); // here Assign a function to Variable
