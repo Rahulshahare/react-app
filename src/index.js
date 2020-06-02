@@ -26,7 +26,7 @@ let input = "    Javascript   ";
 
 
 
-  const transformx = pipe(trimStr, toLowerCase, wrap("div"));
+  const transformx = pipe(trimStr, toLowerCase, wrap("span"), wrap("div"));
   console.log(transformx(input));
 
    /**
