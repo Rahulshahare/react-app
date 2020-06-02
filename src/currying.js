@@ -15,3 +15,10 @@
  add(1)(5) //Simiar to above, we cann function as pass the arguments
 
  //what is most imortant is here is the function have single parameter
+ //Lets make it arrow functon
+
+ const add2 = a =>b => a + b;
+
+//  add2 is similar to add
+
+//  functionName = firstParameter => secondParameter => returnExpression
