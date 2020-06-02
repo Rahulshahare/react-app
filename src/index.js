@@ -17,9 +17,10 @@ let input = "    Javascript   ";
   
   const toLowerCase = str => str.toLowerCase();
 
-  const wrapInDiv = str => `<div>${str}</div>`; //its Templating
+//   const wrapInDiv = str => `<div>${str}</div>`; //its Templating
 
-  const wrapInSpan = str =>`<span>${str}</span>`;
+  const wrap = (type, str) =>`<${type}>${str}</${type}>`;
+            //Here we can wrap input in div or span or any other element. its a Dynamic Wrap
 
   //these are reusable function
 
