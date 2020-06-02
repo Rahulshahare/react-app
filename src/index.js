@@ -8,3 +8,4 @@ function greet(fnMessage) {
     }
 }
 
+sayHello() // will return funcion Back
