@@ -11,15 +11,12 @@ let input = "    Javascript   ";
   * lets Solve this with functional Programming
   */
 
-  function trimStr(str){
-      return str.trim()
-  }
   const trimStr = str => str.trim(); //MoreAdance
 
-  function wrapInDiv(str){
-      return "<div>"+ str +"</div>"
-  }
-
-  const wrapInDiv = str =>"<div>"+ str +"</div>"; //MoreAdane
-
   const wrapInDiv = str => `<div>${str}</div>`; //its Templating
+
+  //these are two reusable function
+
+  const result = wrapInDiv(trimStr(input));
+                    //its Functional Composition
+                    
