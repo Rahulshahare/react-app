@@ -3,12 +3,10 @@ function sayHello() {
 }
 
 function greet(fnMessage) {
-    console.log(fnMessage());
+    return function(){
+
+    }
 }
 
-greet(sayHello)
-
-/**
- * here we can assign function to Variable or
- * pass it to a function 
- */
+// Here instead of returning string, we are returning function, 
+// an annonomous function
