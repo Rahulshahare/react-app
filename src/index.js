@@ -1,6 +1,6 @@
 import store from './store';
 
-store.subscribe( ()=>{
+const unsubcribe = store.subscribe( ()=>{
     console.log("Store Change", store.getState());
 });
 
@@ -16,6 +16,8 @@ store.dispatch({
         courseName: "first Course Name"
     }
 });
+
+unsubcribe(); // after this we are not going to get notified if the store changes
 
 store.dispatch({
     type:"courseRemoved",
