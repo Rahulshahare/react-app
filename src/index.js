@@ -1,11 +1,11 @@
 import { Map } from 'immutable';
 
-let book = { tile: "Shivaji Maharaj" };
+let book = Map({ tile: "Shivaji Maharaj" });
 
-function publish(book){
-    book.isPublished = true; //this add new property called isPublished and set value to true
-}
+// function publish(book){
+//     book.isPublished = true; //this add new property called isPublished and set value to true
+// }
 
-publish(book);
+// publish(book);
 
 console.log(book);
