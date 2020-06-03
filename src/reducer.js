@@ -13,7 +13,8 @@ function reducer(state = [], action){
             ];
         case "courseRemoved" :
             return state.filter( course => course.id !== action.payload.id)
-        default: return state;
+        default: 
+            return state;
     }
      /**
       * These both are same we can do it switch or if-else
