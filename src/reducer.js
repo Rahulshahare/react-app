@@ -9,7 +9,11 @@ function reducer(state, action){
                 id: ++lastId,
                 courseName: action.payload.courseName
             }
-        ]
+        ];
+    }else if(action.type === 'courseRemoved'){
+        return state.filter( course => course.id !== action.payload.id)
+    }else{
+        return state;
     }
 }
 
@@ -18,3 +22,13 @@ function reducer(state, action){
  * then return new array state, which haves 
  * previous state and new item
  */
+
+ /**
+  * if the action type will be courseRemoved 
+  * then we filter state for that given item then 
+  * return course list without that item which have id equals provided id
+  */
+
+  /**
+   * if action will not be found then simply return the state
+   */
