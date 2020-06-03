@@ -6,3 +6,16 @@
  * 3. Create a reducer - this reducer take and action and return the new state
  * 4. Set up the store - set store based on reducer
  */
+
+ /**
+  * as this app is concern
+  * courseList holding list of coursename in state,
+  * so we want courseList to be hold by redux 
+  * [
+  *     {
+  *         id
+  *         coursename
+  *     }
+  * ]
+  * this could be the store
+  */
