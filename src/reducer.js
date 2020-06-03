@@ -1,10 +1,12 @@
 //[] the initial state
+let lastId = 0;
 
 function reducer(state, action){
     if(action.type === "courseAdded"){
         return[
             ...state,
-            {
+            {   
+                id: ++lastId,
                 courseName: action.payload.courseName
             }
         ]
