@@ -1,17 +1,18 @@
 import store from './store';
+import * as actions from './actionTypes';
 
 const unsubcribe = store.subscribe( ()=>{
     console.log("Store Change", store.getState());
 });
 
 store.dispatch({
-    type:"courseAdded",
+    type: actions.COURSE_ADDED,
     payload:{
         courseName: "first Course Name"
     }
 });
 store.dispatch({
-    type:"courseAdded",
+    type: actions.COURSE_ADDED,
     payload:{
         courseName: "first Course Name"
     }
@@ -20,7 +21,7 @@ store.dispatch({
 unsubcribe(); // after this we are not going to get notified if the store changes
 
 store.dispatch({
-    type:"courseRemoved",
+    type: actions.COURSE_REMOVED,
     payload:{
         id: 1
     }
