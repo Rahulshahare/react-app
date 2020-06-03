@@ -3,18 +3,30 @@ const person = {
     address:{
         country: "India",
         city: "Mumbai"
-    }
+    },
+    list:[
+        "A", "B", "C"
+    ]
 } //person is a object with name property
 
-const updated = {...person, name:"javascript"}
+const updated = {
+    ...person, 
+    address:{
+        ...person.address,
+        city:"Taiwan"
+    },
+    name:"javascript"
+}
 
-updated.address.city = "Taiwan";
 
-console.log( person );
+console.log( updated );
 
 /**
  * Here we have updated the property of new object but as it our both
  * objects person & updated reference to same so the person object is also change
  * 
  * as we want to update the new properties to new object
+ * 
+ * 
+ * so this way we are able to update specific property of object.
  */
