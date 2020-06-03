@@ -1,5 +1,9 @@
 import store from './store';
 
+store.subscribe( ()=>{
+    console.log("Store Change", store.getState());
+});
+
 store.dispatch({
     type:"courseAdded",
     payload:{
