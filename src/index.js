@@ -26,4 +26,7 @@
 
  const remove = numbers.filter(n => n !== 2)  //So Filter all items which are not equals to 2 
 
- console.log(remove);
+ //Updating
+ const updated = numbers.map( n => n === 2 ? 20 : n); //here updating 2 with 20, if found 2 return 20 or just number
+    
+ console.log(updated);
