@@ -15,9 +15,12 @@ const updated = {
         ...person.address,
         city:"Taiwan"
     },
-    name:"javascript"
+    name:"javascript",
+    list:[
+        ...person.list,
+        "Z", "Y", "X", "W"
+    ]
 }
-
 
 console.log( updated );
 
@@ -29,4 +32,6 @@ console.log( updated );
  * 
  * 
  * so this way we are able to update specific property of object.
+ * 
+ * here we have added new item to list array i.e. list property of updated object
  */
