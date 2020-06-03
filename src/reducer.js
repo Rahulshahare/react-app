@@ -5,9 +5,14 @@ function reducer(state, action){
         return[
             ...state,
             {
-                
+                courseName: action.payload.courseName
             }
         ]
     }
 }
 
+/**
+ * if the action type will be courseAdded
+ * then return new array state, which haves 
+ * previous state and new item
+ */
