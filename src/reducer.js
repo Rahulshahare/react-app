@@ -1,11 +1,11 @@
-import { COURSE_ADDED, COURSE_REMOVED} from './actionTypes';
+import * as actions from './actionTypes';
 
 //[] the initial state
 let lastId = 0;
 
 export default function reducer(state = [], action){
     switch(action.type){
-        case COURSE_ADDED :
+        case actions.COURSE_ADDED :
             return[
                 ...state,
                 {   
@@ -13,7 +13,7 @@ export default function reducer(state = [], action){
                     courseName: action.payload.courseName
                 }
             ];
-        case COURSE_REMOVED :
+        case actions.COURSE_REMOVED :
             return state.filter( course => course.id !== action.payload.id)
         default: 
             return state;
