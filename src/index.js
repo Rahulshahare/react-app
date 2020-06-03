@@ -1,7 +1,5 @@
 const person = { name: "Wizkumar" } //person is a object with name property
 
-person.name = "tada";
+Object.assign(); // this method copy the one object to anather object
 
-person.age = 25;
 console.log(person)
-//But this is not moderate way to update objects
