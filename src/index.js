@@ -1,3 +1,5 @@
+import { Map } from 'immutable';
+
 let book = { tile: "Shivaji Maharaj" };
 
 function publish(book){
