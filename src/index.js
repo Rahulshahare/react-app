@@ -19,3 +19,8 @@
   * ]
   * this could be the store
   */
+
+  /**
+   * Actions to be perform
+   * - Add New Course name
+   */
