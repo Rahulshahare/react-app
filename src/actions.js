@@ -14,3 +14,12 @@ export function courseAdded(courseName){
         }
     }
  }
+
+export function courseRemoved(id){
+    return{
+        type: actions.COURSE_REMOVED,
+        payload:{
+            id: id
+        }
+    }
+}
