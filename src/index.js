@@ -21,4 +21,9 @@
      ...numbers.slice(index)     //return a remaining array after item
  ];
 
- console.log(added3);
+ //Removing
+ //Here we wann remove 2
+
+ const remove = numbers.filter(n => n !== 2)  //So Filter all items which are not equals to 2 
+
+ console.log(remove);
