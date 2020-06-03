@@ -1,5 +1,5 @@
 const person = { name: "Wizkumar" } //person is a object with name property
 
-Object.assign(); // this method copy the one object to anather object
+const tar = Object.assign({} ,person); // this gonna copy all properties of person object to empty object
 
-console.log(person)
+console.log(tar)
