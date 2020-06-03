@@ -40,4 +40,8 @@ let input = "    Javascript   ";
     * to our function
     */
 
- 
+ /**
+  * Here we learn creating Funtions for solving problmes.
+  * and composing the funtions. then lodash compose and pipe functions.
+  * currying a function. these all create simplicity while programming 
+  */
