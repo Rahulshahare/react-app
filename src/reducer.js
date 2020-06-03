@@ -13,8 +13,16 @@ export default function reducer(state = [], action){
                     courseName: action.payload.courseName
                 }
             ];
+            
         case actions.COURSE_REMOVED :
             return state.filter( course => course.id !== action.payload.id)
+
+        case actions.COURSE_RESOLVED:
+            return state.map(course => 
+                course.id !== action.payload.id 
+                        ? course 
+                        : {...course, resolve: true } )
+
         default: 
             return state;
     }

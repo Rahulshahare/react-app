@@ -1,4 +1,5 @@
 import * as actions from './actionTypes';
+import { act } from 'react-dom/test-utils';
 /**
  * Lets create action creators 
  * if wa wann dispatch same action multiple time,
@@ -10,16 +11,23 @@ export function courseAdded(courseName){
     return{
         type: actions.COURSE_ADDED,
         payload:{
-            courseName: courseName
+            courseName
         }
     }
- }
+}
 
 export function courseRemoved(id){
     return{
         type: actions.COURSE_REMOVED,
         payload:{
-            id: id
+            id
         }
     }
 }
+
+export const courseResolved = id =>({
+    type: actions.COURSE_RESOLVED,
+    payload:{
+        id
+    }
+})
