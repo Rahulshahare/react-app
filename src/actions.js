@@ -1,5 +1,4 @@
 import * as actions from './actionTypes';
-import { act } from 'react-dom/test-utils';
 /**
  * Lets create action creators 
  * if wa wann dispatch same action multiple time,
