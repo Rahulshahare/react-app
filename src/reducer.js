@@ -2,6 +2,22 @@
 let lastId = 0;
 
 function reducer(state = [], action){
+    switch(action.type){
+        case "courseAdded" :
+            return[
+                ...state,
+                {   
+                    id: ++lastId,
+                    courseName: action.payload.courseName
+                }
+            ];
+        case "courseRemoved" :
+            return state.filter( course => course.id !== action.payload.id)
+        default: return state;
+    }
+     /**
+      * These both are same we can do it switch or if-else
+      */
     if(action.type === "courseAdded"){
         return[
             ...state,
@@ -10,7 +26,7 @@ function reducer(state = [], action){
                 courseName: action.payload.courseName
             }
         ];
-    }else if(action.type === 'courseRemoved'){
+    }else if(action.type === "courseRemoved"){
         return state.filter( course => course.id !== action.payload.id)
     }else{
         return state;
