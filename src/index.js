@@ -6,7 +6,8 @@
  const numbers = [1, 2, 3];
 
  //Adding
- const added = [...numbers, 4, 5, 6, 7];
+ const added = [ 4, ...numbers];
+ //here added new item then cory the items of previous array
 
 
  console.log(added);
