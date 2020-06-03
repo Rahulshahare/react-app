@@ -5,7 +5,11 @@ const tar = Object.assign({} ,person, { name: "Javascript", age: 25, pets : { na
 
 
 tar.list.map(a =>{
-    console.log(a)
+    console.log( toLowerCase(a) )
 })
 
 // mapping array from object
+
+function toLowerCase(str){
+    return str.toLowerCase()
+}
