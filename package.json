@@ -2,6 +2,14 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Rahul Shahare",
+    "url": "https://github.com/Rahulshahare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Rahulshahare/react-app.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
