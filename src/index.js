@@ -8,4 +8,4 @@ let book = Map({ title: "Shivaji Maharaj"});
 
 // publish(book);
 
-console.log(book.get("title"));
+console.log(book.toJS());
