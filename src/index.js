@@ -6,8 +6,19 @@
  const numbers = [1, 2, 3];
 
  //Adding
- const added = [ 4, ...numbers];
- //here added new item then cory the items of previous array
+ //firstCopy then add new items
+ const added = [...numbers, 4];
 
+ //first Add then Copy itmes of array
+ const added2 = [4, ...numbers];
 
- console.log(added);
+ //Addin before a specific item, here adding item before 2
+ const index = numbers.indexOf(3);
+
+ const added3 = [
+     ...numbers.slice(0, index), //return a whole array before item
+     4,                            //add new item
+     ...numbers.slice(index)     //return a remaining array after item
+ ];
+
+ console.log(added3);
