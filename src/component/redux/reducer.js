@@ -11,13 +11,9 @@ export default function reducer(state = [], action){
             return state.concat(action.payload.coursename)
 
         case actionType.DELETE_COURSE:
-            
-            const index = state.indexOf(action.payload.coursename);
-            if (index > -1) {
-              state.splice(index, 1);
-            }
+            // console.log( action.payload.coursename);
+            return state.filter(n => n !== action.payload.coursename)
         
-            break;
 
         case actionType.RESET_COURSE :
             return state = [];
