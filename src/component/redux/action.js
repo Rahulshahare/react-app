@@ -1,10 +1,11 @@
+import * as actionType from './actionTypes';
 export const addNewCourse = (coursename) =>({
-    type: 'addingCourse',
+    type: actionType.ADD_NEW_COURSE,
     payload:{
         coursename
     }
 })
 
 export const resetCourse = () =>({
-    type: 'resetCourse'
+    type: actionType.RESET_COURSE
 })
