@@ -13,6 +13,12 @@ store.dispatch(courseResolved(2));
 store.dispatch({
     type: 'INCREASE'
 });
+store.dispatch({
+    type: 'DECREASE'
+});
+store.dispatch({
+    type: 'DECREASE'
+});
 
 unsubcribe(); // after this we are not going to get notified if the store changes
 store.dispatch(courseRemoved(1));
