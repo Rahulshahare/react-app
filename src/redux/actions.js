@@ -1,4 +1,4 @@
-import * as actions from './actionTypes';
+import * as actionType from './actionTypes';
 /**
  * Lets create action creators 
  * if wa wann dispatch same action multiple time,
@@ -8,7 +8,7 @@ import * as actions from './actionTypes';
 
 export function courseAdded(courseName){
     return{
-        type: actions.COURSE_ADDED,
+        type: actionType.COURSE_ADDED,
         payload:{
             courseName
         }
@@ -17,7 +17,7 @@ export function courseAdded(courseName){
 
 export function courseRemoved(id){
     return{
-        type: actions.COURSE_REMOVED,
+        type: actionType.COURSE_REMOVED,
         payload:{
             id
         }
@@ -25,7 +25,7 @@ export function courseRemoved(id){
 }
 
 export const courseResolved = id =>({
-    type: actions.COURSE_RESOLVED,
+    type: actionType.COURSE_RESOLVED,
     payload:{
         id
     }
