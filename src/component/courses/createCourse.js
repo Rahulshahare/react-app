@@ -20,7 +20,7 @@ export default class CreateCoursePage extends React.Component{
     }
     componentDidMount = ()=>{
         this.setState({
-            courseList: store.getState()
+            courseList: store.getState().courses
         })
     }
     handleChange = (e) =>{
@@ -37,7 +37,7 @@ export default class CreateCoursePage extends React.Component{
         store.dispatch( addNewCourse(a))
         console.log(store.getState());
         this.setState({
-            courseList:store.getState(),
+            courseList:store.getState().courses,
             courseName:''
         })
     }
@@ -52,7 +52,7 @@ export default class CreateCoursePage extends React.Component{
         console.log(coursename)
         store.dispatch(deleteCourse(coursename))
         this.setState({
-            courseList: store.getState()
+            courseList: store.getState().courses
         })
 
     }
