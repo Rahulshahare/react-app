@@ -9,3 +9,10 @@ export const addNewCourse = (coursename) =>({
 export const resetCourse = () =>({
     type: actionType.RESET_COURSE
 })
+
+export const deleteCourse = (coursename) =>({
+    type: actionType.DELETE_COURSE,
+    payload:{
+        coursename
+    }
+})
