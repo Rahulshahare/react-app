@@ -17,6 +17,11 @@ export default class CreateCoursePage extends React.Component{
             courseList:[]
         }
     }
+    componentDidMount = ()=>{
+        this.setState({
+            courseList: store.getState()
+        })
+    }
     handleChange = (e) =>{
         this.setState({
             courseName:e.target.value
@@ -41,6 +46,9 @@ export default class CreateCoursePage extends React.Component{
         })
     }
     handleReset = ()=>{
+        store.dispatch({
+            type: 'resetCourse',
+        })
         this.setState({
             courseList:[],
             courseName:''
@@ -52,7 +60,7 @@ export default class CreateCoursePage extends React.Component{
                 <h4>Add New Course Here</h4>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label for="course">Course</label>
+                        <label htmlFor="course">Course</label>
                         <input type="text" onChange={this.handleChange} value={this.state.courseName} className="form-control" id="course"/>
                     </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
@@ -68,8 +76,8 @@ function ListCourse(courses){
     return(
         <ul>
                 {
-                    courses.map(course =>(
-                        <li>{course}</li>
+                    courses.map((course, i) =>(
+                        <li key={i}>{course}</li>
                     ))
                 }
         </ul>
