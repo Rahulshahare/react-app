@@ -5,7 +5,8 @@ export default class User extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isLoading:false
+            isLoading:false,
+            users:[],
         }
     }
     
@@ -29,7 +30,12 @@ export default class User extends React.Component{
         })
 
     }
-    render(){
+    render(){   
+        store.subscribe( ()=>{
+                this.setState({
+                    users: store.getState().users
+                })
+        })
         return(
             <div>
                 <div className="jumbotron jumbotron-fluid">
@@ -39,32 +45,46 @@ export default class User extends React.Component{
                         <button onClick={this.getUser} className="btn btn-primary btn-sm">{!this.state.isLoading ? "Load data" :"Loading Fail, Try Again"}</button>
                     </div>
                 </div>
-                {   !store.getState().users ? '' :
-                    <CreateCard/>
+                <div>
+                {
+                   
+                        // console.log("Store Change", store.getState());
+                        !this.state.users ? '' :
+                        <CreateCard users={store.getState().users}/>
+                
+                    
                 }
+                </div>
             </div>
         )
     }
 }
 
-function CreateCard(){
+function CreateCard(props){
     return(
-        <div className="col-3">
-            <div className="card bg-light mb-3">
-                <div className="card-header">username</div>
-                <div className="card-body">
-                    <h5 className="card-title">name</h5>
-                    <p className="card-text">company.catchPhrase at company.name</p>
-                    <ul className="list-group">
-                        <li className="list-group item">email</li>
-                        <li className="list-group item">mobile</li>
-                        <li className="list-group item">adress</li>
-                    </ul>
-                </div>
-                <div className="card-footer">
-                    <small className="text-muted">Website</small>
-                </div>
-            </div>
+        <div>
+            {
+                props.users.map(user =>(
+                    <div className="col-3">
+                        <div className="card bg-light mb-3">
+                            <div className="card-header">{user.username}</div>
+                            <div className="card-body">
+                                <h5 className="card-title">{user.name}</h5>
+                                <p className="card-text">{user.company.catchPhrase} at {user.company.name}</p>
+                                <ul className="list-group">
+                                    <li className="list-group item">Email : {user.email}</li>
+                                    <li className="list-group item">Phone :{user.phone}</li>
+                                    <li className="list-group item">Address : {user.address.suite},{user.address.street},{user.address.city}</li>
+                                </ul>
+                            </div>
+                            <div className="card-footer">
+                                <small className="text-muted">{user.website}</small>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+
         </div>
     )
 }
