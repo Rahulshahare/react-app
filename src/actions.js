@@ -6,11 +6,11 @@ import * as actions from './actionTypes';
  * so lets create here
  */
 
-export function courseAdded(){
+export function courseAdded(courseName){
     return{
         type: actions.COURSE_ADDED,
         payload:{
-            courseName: makeid(10)
+            courseName
         }
     }
 }
@@ -31,6 +31,9 @@ export const courseResolved = id =>({
     }
 })
 
+export function dynamicCourseAdded(){
+    return courseAdded(makeid(10))
+}
 //Function for generating random values
 function makeid(length) {
     var result           = '';

@@ -1,5 +1,5 @@
 import store from './store';
-import { courseAdded, courseRemoved, courseResolved } from './actions';
+import { courseAdded, courseRemoved, courseResolved, dynamicCourseAdded } from './actions';
 
 const unsubcribe = store.subscribe( ()=>{
     console.log("Store Change", store.getState());
@@ -7,6 +7,7 @@ const unsubcribe = store.subscribe( ()=>{
 
 store.dispatch(courseAdded("First Course Name"));
 store.dispatch(courseAdded("Second Course Name"));
+store.dispatch(dynamicCourseAdded());
 store.dispatch(courseResolved(2));
 
 
