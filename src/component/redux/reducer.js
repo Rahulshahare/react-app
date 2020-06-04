@@ -1,3 +1,3 @@
-function reducer(state, action){
-    
+function reducer(state = [], action){
+
 }
