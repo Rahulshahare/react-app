@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../redux/store';
+import { addNewCourse, resetCourse } from '../redux/action';
 
 /**
  * course list is only available for this component only. if this component re-render 
@@ -33,12 +34,7 @@ export default class CreateCoursePage extends React.Component{
         if(a.length === 0){
             return;
         }
-        store.dispatch({
-            type: 'addingCourse',
-            payload:{
-                coursename: a
-            }
-        })
+        store.dispatch( addNewCourse(a))
         console.log(store.getState());
         this.setState({
             courseList:this.state.courseList.concat(a),
@@ -46,9 +42,7 @@ export default class CreateCoursePage extends React.Component{
         })
     }
     handleReset = ()=>{
-        store.dispatch({
-            type: 'resetCourse',
-        })
+        store.dispatch(resetCourse());
         this.setState({
             courseList:[],
             courseName:''
