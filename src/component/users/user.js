@@ -64,8 +64,8 @@ function CreateCard(props){
     return(
         <div>
             {
-                props.users.map(user =>(
-                    <div className="col-3">
+                props.users.map((user, i) =>(
+                    <div key={i} className="col-3">
                         <div className="card bg-light mb-3">
                             <div className="card-header">{user.username}</div>
                             <div className="card-body">
