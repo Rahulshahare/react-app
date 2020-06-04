@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../redux/store';
-import { addNewCourse, resetCourse } from '../redux/action';
+import { addNewCourse, resetCourse, deleteCourse } from '../redux/action';
 
 /**
  * course list is only available for this component only. if this component re-render 
@@ -37,7 +37,7 @@ export default class CreateCoursePage extends React.Component{
         store.dispatch( addNewCourse(a))
         console.log(store.getState());
         this.setState({
-            courseList:this.state.courseList.concat(a),
+            courseList:store.getState(),
             courseName:''
         })
     }
@@ -48,8 +48,13 @@ export default class CreateCoursePage extends React.Component{
             courseName:''
         })
     }
-    handleDelete = (id)=>{
-        console.log(id)
+    handleDelete = (coursename)=>{
+        console.log(coursename)
+        store.dispatch(deleteCourse(coursename))
+        this.setState({
+            courseList: store.getState()
+        })
+
     }
     render(){
         return(
@@ -86,7 +91,7 @@ function ListCourse(props){
                     props.courses.map((course, i) =>(
                         <li key={i} className="list-group-item d-flex justify-content-between align-items-center">
                             {course}
-                            <span onClick={()=> props.handleDelete(i)} className="badge badge-danger badge-pill">delete</span>
+                            <span onClick={()=> props.handleDelete(course)} className="badge badge-danger badge-pill">delete</span>
                         </li>
                     ))
                 }
