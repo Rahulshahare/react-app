@@ -31,13 +31,40 @@ export default class User extends React.Component{
     }
     render(){
         return(
-            <div className="jumbotron jumbotron-fluid">
-                <div className="container">
-                    <h1 className="display-4">Users</h1>
-                    <p className="lead">fatching users from server using redux and working on</p>
-                    <button onClick={this.getUser} className="btn btn-primary btn-sm">{!this.state.isLoading ? "Load data" :"Loading Fail, Try Again"}</button>
+            <div>
+                <div className="jumbotron jumbotron-fluid">
+                    <div className="container">
+                        <h1 className="display-4">Users</h1>
+                        <p className="lead">fatching users from server using redux and working on</p>
+                        <button onClick={this.getUser} className="btn btn-primary btn-sm">{!this.state.isLoading ? "Load data" :"Loading Fail, Try Again"}</button>
+                    </div>
                 </div>
+                {   !store.getState().users ? '' :
+                    <CreateCard/>
+                }
             </div>
         )
     }
+}
+
+function CreateCard(){
+    return(
+        <div className="col-3">
+            <div className="card bg-light mb-3">
+                <div className="card-header">username</div>
+                <div className="card-body">
+                    <h5 className="card-title">name</h5>
+                    <p className="card-text">company.catchPhrase at company.name</p>
+                    <ul className="list-group">
+                        <li className="list-group item">email</li>
+                        <li className="list-group item">mobile</li>
+                        <li className="list-group item">adress</li>
+                    </ul>
+                </div>
+                <div className="card-footer">
+                    <small className="text-muted">Website</small>
+                </div>
+            </div>
+        </div>
+    )
 }
