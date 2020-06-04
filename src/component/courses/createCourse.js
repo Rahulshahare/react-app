@@ -1,4 +1,5 @@
 import React from 'react';
+import store from '../redux/store';
 
 /**
  * course list is only available for this component only. if this component re-render 
@@ -27,6 +28,13 @@ export default class CreateCoursePage extends React.Component{
         if(a.length === 0){
             return;
         }
+        store.dispatch({
+            type: 'addingCourse',
+            payload:{
+                coursename: a
+            }
+        })
+        console.log(store.getState());
         this.setState({
             courseList:this.state.courseList.concat(a),
             courseName:''
@@ -56,7 +64,7 @@ export default class CreateCoursePage extends React.Component{
 }
 
 function ListCourse(courses){
-    console.log(courses)
+    // console.log(courses)
     return(
         <ul>
                 {
