@@ -6,11 +6,11 @@ import * as actions from './actionTypes';
  * so lets create here
  */
 
-export function courseAdded(courseName){
+export function courseAdded(){
     return{
         type: actions.COURSE_ADDED,
         payload:{
-            courseName
+            courseName: makeid(10)
         }
     }
 }
@@ -30,3 +30,15 @@ export const courseResolved = id =>({
         id
     }
 })
+
+//Function for generating random values
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
+ 
