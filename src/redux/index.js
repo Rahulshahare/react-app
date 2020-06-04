@@ -10,6 +10,9 @@ store.dispatch(courseAdded("Second Course Name"));
 store.dispatch(dynamicCourseAdded());
 store.dispatch(courseResolved(2));
 
+store.dispatch({
+    type: 'INCREASE'
+});
 
 unsubcribe(); // after this we are not going to get notified if the store changes
 store.dispatch(courseRemoved(1));
