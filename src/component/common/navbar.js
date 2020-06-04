@@ -8,6 +8,7 @@ function Navbar(){
             <NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink>
             <NavLink to="/courses" className="nav-link" activeClassName="active">Courses</NavLink>
             <NavLink to="/user" className="nav-link" activeClassName="active">Users</NavLink>
+            <NavLink to="/counter" className="nav-link" activeClassName="active">Counter</NavLink>
             <NavLink to="/something" className="nav-link" activeClassName="active">404</NavLink>
         </nav>
     )
