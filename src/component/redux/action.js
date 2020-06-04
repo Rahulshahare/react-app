@@ -16,3 +16,15 @@ export const deleteCourse = (coursename) =>({
         coursename
     }
 })
+
+/**
+ * Action for userREducer
+ */
+
+export const addNewUser = (user) =>({
+    type: actionType.ADD_NEW_USER,
+    payload:{
+        user
+    }
+})
+
