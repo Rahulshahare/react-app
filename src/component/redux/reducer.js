@@ -1,13 +1,8 @@
-function reducer(state = [], action){
+export default function reducer(state = [], action){
 
     switch(action.type){
         case 'addingCourse':
-            return[
-                ...state,
-                {
-                    coursename: action.payload.coursename
-                }
-            ]
+            return state = state.concat(action.payload.coursename)
 
         case 'resetCourse':
             return state = [];
