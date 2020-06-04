@@ -48,6 +48,9 @@ export default class CreateCoursePage extends React.Component{
             courseName:''
         })
     }
+    handleDelete = (id)=>{
+        console.log(id)
+    }
     render(){
         return(
             <div className="col-6">
@@ -62,21 +65,29 @@ export default class CreateCoursePage extends React.Component{
                     <button type="reset" onClick={this.handleReset} className="btn btn-secondary">Reset</button>
                 </form>
                 <br/>
-                {ListCourse(this.state.courseList)}
+                {   this.state.courseList 
+                    ?
+                    
+                    <ListCourse 
+                        courses = {this.state.courseList} 
+                        handleDelete = {this.handleDelete}
+                    />
+                    : ''
+                }
             </div>
         )
     }
 }
 
-function ListCourse(courses){
+function ListCourse(props){
     // console.log(courses)
     return(
         <ul className="list-group">
                 {
-                    courses.map((course, i) =>(
+                    props.courses.map((course, i) =>(
                         <li key={i} className="list-group-item d-flex justify-content-between align-items-center">
                             {course}
-                            <span className="badge badge-danger badge-pill">delete</span>
+                            <span onClick={props.handleDelete(i)} className="badge badge-danger badge-pill">delete</span>
                         </li>
                     ))
                 }
