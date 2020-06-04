@@ -45,3 +45,14 @@ function makeid(length) {
     return result;
  }
  
+
+ /**
+  * Actions for Counter Reducer
+  */
+export const increase = ()=>({
+    type: 'INCREASE'
+})
+
+export const decrease = () =>({
+    type: 'DECREASE'
+})
