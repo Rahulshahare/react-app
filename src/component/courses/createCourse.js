@@ -91,7 +91,11 @@ function ListCourse(props){
                     props.courses.map((course, i) =>(
                         <li key={i} className="list-group-item d-flex justify-content-between align-items-center">
                             {course}
-                            <span onClick={()=> props.handleDelete(course)} className="badge badge-danger badge-pill">delete</span>
+                            <button 
+                                onClick={()=> props.handleDelete(course)} 
+                                type="button" 
+                                className="btn btn-danger btn-sm"
+                            >Remove</button>
                         </li>
                     ))
                 }
