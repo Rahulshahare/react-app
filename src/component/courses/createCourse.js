@@ -50,16 +50,19 @@ export default class CreateCoursePage extends React.Component{
     }
     render(){
         return(
-            <div>{ListCourse(this.state.courseList)}
+            <div className="col-6">
+                
                 <h4>Add New Course Here</h4>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="course">Course</label>
                         <input type="text" onChange={this.handleChange} value={this.state.courseName} className="form-control" id="course"/>
                     </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-                <button type="reset" onClick={this.handleReset} className="btn btn-secondary">Reset</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="reset" onClick={this.handleReset} className="btn btn-secondary">Reset</button>
                 </form>
+                <br/>
+                {ListCourse(this.state.courseList)}
             </div>
         )
     }
@@ -68,10 +71,13 @@ export default class CreateCoursePage extends React.Component{
 function ListCourse(courses){
     // console.log(courses)
     return(
-        <ul>
+        <ul className="list-group">
                 {
                     courses.map((course, i) =>(
-                        <li key={i}>{course}</li>
+                        <li key={i} className="list-group-item d-flex justify-content-between align-items-center">
+                            {course}
+                            <span className="badge badge-danger badge-pill">delete</span>
+                        </li>
                     ))
                 }
         </ul>
