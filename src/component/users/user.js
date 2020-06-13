@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addNewUser} from  '../redux/action';
 //import store from '../redux/store'; 
-import { fromJS } from 'immutable';
 
 class User extends React.Component{
     constructor(props){
@@ -21,7 +20,8 @@ class User extends React.Component{
             return response.json()  //we only get here if there is no error
         })
         .then( json => {
-            store.dispatch(addNewUser(json))
+            // store.dispatch(addNewUser(json))
+            this.props.addNewUser(json)
         })
         .catch( err => {
             err.text().then( errorMessage => {
@@ -34,11 +34,11 @@ class User extends React.Component{
 
     }
     render(){   
-        store.subscribe( ()=>{
-                this.setState({
-                    users: store.getState().users
-                })
-        })
+        
+                // this.setState({
+                //     users: this.props.users
+                // })
+        
         return(
             <div>
                 <div className="jumbotron jumbotron-fluid">
@@ -52,8 +52,8 @@ class User extends React.Component{
                 {
                    
                         // console.log("Store Change", store.getState());
-                        !this.state.users ? '' :
-                        <CreateCard users={store.getState().users}/>
+                        !this.props.users ? '' :
+                        <CreateCard users={this.props.users}/>
                 
                     
                 }
@@ -65,7 +65,7 @@ class User extends React.Component{
 
 const mapStateToProps = (state /*,ownProps */) =>{
     return{
-        user: state.users
+        users: state.users
     }
 }
 
