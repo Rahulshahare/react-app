@@ -63,8 +63,16 @@ class User extends React.Component{
     }
 }
 
+const mapStateToProps = (state ,ownProps) =>{
+    return{
+        user: state.users
+    }
+}
+
+const mapDispatchToProps = { addNewUser }
+
 export default connect(
-    mapstateToProps,
+    mapStateToProps,
     mapDispatchToProps
 )(User)
 
