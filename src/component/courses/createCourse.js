@@ -83,8 +83,18 @@ class CreateCoursePage extends React.Component{
         )
     }
 }
+const mapStateToProps = (state /*,ownProps*/)=>{
+    return{
+        courses:state.courses
+    }
+}
 
-export default CreateCoursePage;
+const mapDispatchToProps = { addNewCourse, deleteCourse, resetCourse };
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CreateCoursePage);
 
 function ListCourse(props){
     // console.log(courses)
