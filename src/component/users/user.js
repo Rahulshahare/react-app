@@ -62,10 +62,10 @@ export default class User extends React.Component{
 
 function CreateCard(props){
     return(
-        <div>
+        <div className="row">
             {
                 props.users.map((user, i) =>(
-                    <div key={i} className="col-3">
+                    <div key={i} className="col-lg-3 col-md-4 col-6 col-xs-12">
                         <div className="card bg-light mb-3">
                             <div className="card-header">{user.username}</div>
                             <div className="card-body">
