@@ -15,23 +15,24 @@ class User extends React.Component{
     getUser = ()=>{
 
         fetch("https://jsonplaceholder.typicode.com/users")
-        .then( response => {
-            if (!response.ok) { throw response }
-            return response.json()  //we only get here if there is no error
-        })
-        .then( json => {
-            // store.dispatch(addNewUser(json))
-            this.props.addNewUser(json)
-        })
-        .catch( err => {
-            err.text().then( errorMessage => {
-            // this.props.dispatch(displayTheError(errorMessage))
-                this.setState({
-                    isLoading:true
-                })
+            .then( response => {
+                    if (!response.ok) { throw response }
+                    return response.json()  //we only get here if there is no error
             })
-        })
-
+            .then( json => {
+                    // store.dispatch(addNewUser(json))
+                    this.props.addNewUser(json)        
+                })
+            .catch( err => {
+                    err.text().then( errorMessage => {
+                    // this.props.dispatch(displayTheError(errorMessage))
+                        this.setState({
+                            isLoading:true
+                        })
+                    })
+            })
+         
+        
     }
     render(){   
         
