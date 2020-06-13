@@ -1,5 +1,6 @@
 import React from 'react';
-import store from '../redux/store';
+import { connect } from 'react-redux';
+// import store from '../redux/store';
 import { addNewCourse, resetCourse, deleteCourse } from '../redux/action';
 
 /**
@@ -10,7 +11,7 @@ import { addNewCourse, resetCourse, deleteCourse } from '../redux/action';
  * Using Redux it is possible to make courseList available for whole app.
  * So lets get started with Redux
  */
-export default class CreateCoursePage extends React.Component{
+class CreateCoursePage extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -83,6 +84,8 @@ export default class CreateCoursePage extends React.Component{
     }
 }
 
+export default CreateCoursePage;
+
 function ListCourse(props){
     // console.log(courses)
     return(
@@ -90,6 +93,7 @@ function ListCourse(props){
                 {
                     props.courses.map((course, i) =>(
                         <li key={i} className="list-group-item d-flex justify-content-between align-items-center">
+                            {i+1+'. '}
                             {course}
                             <button 
                                 onClick={()=> props.handleDelete(course)} 
