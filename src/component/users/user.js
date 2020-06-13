@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { addNewUser} from  '../redux/action';
 //import store from '../redux/store'; 
 import { fromJS } from 'immutable';
-export default class User extends React.Component{
+
+class User extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -61,6 +62,13 @@ export default class User extends React.Component{
         )
     }
 }
+
+export default connect(
+    mapstateToProps,
+    mapDispatchToProps
+)(User)
+
+
 
 function CreateCard(props){
     return(
