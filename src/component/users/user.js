@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { addNewUser} from  '../redux/action';
-import store from '../redux/store'; 
+//import store from '../redux/store'; 
+import { fromJS } from 'immutable';
 export default class User extends React.Component{
     constructor(props){
         super(props);
