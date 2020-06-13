@@ -1,11 +1,5 @@
-import { createStore , combineReducers} from 'redux';
-import courses from './reducer';
-import users from './userReducer';
-
-const reducer = combineReducers({
-    courses,
-    users
-})
+import { createStore } from 'redux';
+import reducer from './reducer';
 
 const store = createStore(reducer);
 
