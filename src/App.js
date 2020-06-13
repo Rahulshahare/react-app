@@ -8,9 +8,11 @@ import store from './component/redux/store';
 
 function App() {
   return (
-    <div>
-      <Routers/>
-    </div>
+    <Provider store={store}>
+      <div>
+        <Routers/>
+      </div>
+    </Provider>
   );
 }
 
