@@ -23,9 +23,9 @@ export default class User extends React.Component{
         .catch( err => {
             err.text().then( errorMessage => {
             // this.props.dispatch(displayTheError(errorMessage))
-            this.setState({
-                isLoading:true
-            })
+                this.setState({
+                    isLoading:true
+                })
             })
         })
 
