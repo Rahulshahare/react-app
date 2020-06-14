@@ -16,13 +16,8 @@ class CreateCoursePage extends React.Component{
         super(props);
         this.state={
             courseName:'',
-            courseList:[]
+            
         }
-    }
-    componentDidMount = ()=>{
-        this.setState({
-            courseList: store.getState().courses
-        })
     }
     handleChange = (e) =>{
         this.setState({
@@ -35,26 +30,23 @@ class CreateCoursePage extends React.Component{
         if(a.length === 0){
             return;
         }
-        store.dispatch( addNewCourse(a))
-        console.log(store.getState());
+       // store.dispatch( addNewCourse(a))
+        this.props.addNewCourse(a)
+        console.log(this.props.courses);
+        
         this.setState({
-            courseList:store.getState().courses,
             courseName:''
         })
     }
     handleReset = ()=>{
-        store.dispatch(resetCourse());
+        this.props.resetCourse();
         this.setState({
-            courseList:[],
             courseName:''
         })
     }
     handleDelete = (coursename)=>{
         console.log(coursename)
-        store.dispatch(deleteCourse(coursename))
-        this.setState({
-            courseList: store.getState().courses
-        })
+        this.props.deleteCourse(coursename)
 
     }
     render(){
@@ -71,11 +63,11 @@ class CreateCoursePage extends React.Component{
                     <button type="reset" onClick={this.handleReset} className="btn btn-secondary">Reset</button>
                 </form>
                 <br/>
-                {   !this.state.courseList 
+                {   !this.props.courses
                     ? ''
                     :
                     <ListCourse 
-                        courses = {this.state.courseList} 
+                        courses = {this.props.courses} 
                         handleDelete = {this.handleDelete}
                     />
                 }
